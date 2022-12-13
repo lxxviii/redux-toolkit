@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { routes } from './routes'
 import { useSelector } from "react-redux";
 import Counter from "./components/counter";
@@ -27,7 +27,7 @@ export default function App() {
               <Route exact={route.exact} path={route.path} render={() => {
                 if (route.auth && !user) {
                   console.log(user)
-                  return <redirect to='/login' />
+                  return <Navigate to='/login' />
                 }
                 return <route.component />
               }} />
