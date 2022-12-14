@@ -11,16 +11,16 @@ export const routes = [
         auth: false
     },
     {
-        path: '/profile',
-        exact: true,
-        component: Profile,
-        auth: true
-    },
-    {
         path: '/about',
         exact: true,
         component: About,
         auth: false
+    },
+    {
+        path: '/profile',
+        exact: true,
+        component: Profile,
+        auth: true
     },
     {
         path: '/login',

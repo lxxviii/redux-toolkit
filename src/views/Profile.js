@@ -1,7 +1,7 @@
 export default function Profile() {
     return (
         <div style={{ background: 'lightblue' }}>
-            PROFILE PAGE
+            <h3>PROFILE PAGE</h3>
         </div>
     )
 }
