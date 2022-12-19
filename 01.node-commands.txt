@@ -1,0 +1,9 @@
+npm init --yes
+
+npm install redux
+
+md index.js -> node index (npm start olarak Kullanılır)
+
+node nested-state
+
+npm install immer  // reducer içerisindeki karmaşık yapıları basitleştirmek için kullanılır.

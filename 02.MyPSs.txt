@@ -1,0 +1,51 @@
+CAKET SHOP SCENARIO                     REDUX                       PURPOSE
+
+SHOP                                    STORE                       Hold the state of your application
+CAKE ORDERED                            ACTION                      Describes what happend
+SHOPKEEPER                              REDUCER                     Ties the store and actions together
+
+A "STORE" that holds the state of out application
+An "ACTION" that describes what happened in the application
+A "REDUCER" which handles the action and decides hot to update the state
+
+-- Uygulamanın durumunu tutan bir "MAĞAZA" --
+-- Uygulamada ne olduğunu açıklayan bir "EYLEM" -- 
+-- Eylemi yöneten ve durumu güncellemek için sıcak karar veren bir "REDUCER" --
+
+THREE PRINCIPLES
+
+1.First Principle:
+"The global state of of your application is stored as an object inside a single store"
+Maintain our application state in a single object which would be managed by the Redux store
+-- "Uygulamanızın genel durumu, tek bir Store'da bir Nesne olarak depolanır" --
+-- Redux Store tarafından yönetilecek tek bir Nesnede uygulama durumumuzu koruyun --
+For Selected Exam --Cake Shop --
+Let's assume we are tracking the number of cakes on the shelf
+{
+    numberOfCakes:10
+}
+
+2.Second Principle
+"The only way to change the state is to dispatch an action, an object that describes what happend"
+To update the state of you app, you need to let Redux know about that with an action
+-- "Durumu değiştirmenin tek yolu, ne olduğunu açıklayan bir nesne, bir eylem göndermektir" --
+-- Uygulamanızın durumunu güncellemek için Redux'a bunu bir eylemle bildirmeniz gerekir. --
+For Selected Exam --Cake Shop --
+Scan the QR code and place an order - CAKE_ORDERED
+{
+    type:'CAKE_ORDERED'
+}
+
+3.Third Principle
+"To specify how the state tree is updated based on actions, you write pure reducers"
+-- Eylemlere göre durum ağacının nasıl güncellendiğini belirtmek için saf indirgeyiciler yazarsınız --
+For Selected Exam --Cake Shop --
+Reducer - (previousState, action) => newState
+-- Cake Shop --
+Reducer is the shopkeeper
+const reducer = (state = initialState, action) =>  {
+    switch (action.type){
+        case CAKE_ORDERED:
+        return{ numberOfCakes : state. numberOfCakes - 1}
+    }
+}

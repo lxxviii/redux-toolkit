@@ -1,0 +1,7 @@
+Specify how the app's state changes in response to actions sent to the store
+Function that accepts state and action as arguments and returns the next state of the application
+-- Store'a gönderilen işlemlere yanıt olarak uygulamanın durumunun nasıl değişeceğini belirtin --
+-- State ve Action bağımsız değişken olarak kabul eden ve uygulamanın bir sonraki durumunu döndüren işlev --
+
+(previousState, action) => newState
+

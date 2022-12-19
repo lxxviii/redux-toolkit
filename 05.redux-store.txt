@@ -1,0 +1,14 @@
+One store for the entire application
+-- Tüm Uygulama Tek Bir Store 'da tutulur --
+
+REDUX STORE --> SORUMLULUKLARI (RESPONSIBILITIES)
+1.Holds application state
+-- Uygulamanın State'ini tutar --
+2.Allows access to state via getState()
+-- getState() aracılığıyla State'e erişime izin verir --
+3.Allows state to be updated via dispatch(action)
+-- Durumun Dispatch -gönderim- (eylem) aracılığıyla güncellenmesine izin verir --
+4.Register listeners via subscribe(listener)
+-- Abone (dinleyici) yoluyla dinleyicileri kaydedin --
+5.Handles unregistering of listeners via the function returned by subscribe(listener)
+-- Abone (dinleyici) tarafından döndürülen işlev aracılığıyla dinleyicilerin kaydını silme işlemlerini gerçekleştirir --

@@ -1,0 +1,11 @@
+The only way your application can interact with the store
+Carry some information from your app to the redux store
+Plain JavaScript objects
+Have a 'type' property that describes something that happended in the application
+The 'type' property is typically defined as string constants
+
+-- Uygulamanızın mağazayla etkileşim kurabilmesinin tek yolu --
+-- Uygulamanızdan bazı bilgileri redux mağazasına taşıyın --
+-- Düz JavaScript nesneleri --
+-- Uygulamada olan bir şeyi açıklayan bir 'type' özelliğine sahip olun --
+-- "type" özelliği genellikle dize sabitleri olarak tanımlanır --
