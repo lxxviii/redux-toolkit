@@ -10,16 +10,16 @@ const initialState = {
     },
 }
 
-const STREET_UPDATED = 'STREET_UPDATED'
+const STREET_UPDATED = 'STREET_UPDATED' //1
 
-const updateStreet = (street) => {
+const updateStreet = (street) => { //2
     return {
         type: STREET_UPDATED,
         payload: street
     }
 }
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {  //3
     switch (action.type) {
         case STREET_UPDATED:
             // return { //IMMER COMMENTLENDİ

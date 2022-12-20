@@ -1,0 +1,11 @@
+MIDDLEWARE
+Is the suggested way to extend Redux with custom functionality
+-- Redux'u özel işlevlerle genişletmenin önerilen yolu --
+Provides a third-party extension point between dispatching an action and the moment it reaches the reducer
+-- Bir eylemin gönderilmesi ile azaltıcıya ulaştığı an arasında bir üçüncü taraf uzatma noktası sağlar --
+Use middleware for logging crash reporting performing asynchronous tasks etc
+-- Asenkron görevler vb. gerçekleştirirken kilitlenme raporlamasını günlüğe kaydetmek için ara yazılım kullanın --
+
+
+npm i redux-logger //Uygulamamızdaki Redux ile tüm bilgileri günlüğe kaydeder
+

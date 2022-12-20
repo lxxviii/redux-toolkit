@@ -3,6 +3,11 @@ const redux = require('redux') //DEPENDENCY OLDUĞUNDAN CUSTOM HOOK İLE İMPORT
 const createStore = redux.createStore // Sayfa sonu store = createStore(reducer) ile tamamlanıyor
 const bindActionCreators = redux.bindActionCreators // ACTIONCREATORS EXAMPLE
 const combineReducers = redux.combineReducers //ÇOKLU REDUCER YAPILARINI BİRLEŞTİRMEK İÇİN KULLANILIR
+
+const applyMiddleware = redux.applyMiddleware
+
+const reduxLogger = require('redux-logger')
+const logger = reduxLogger.createLogger()
 //ACTIONS
 const CAKE_ORDERED = 'CAKE_ORDERED'  //NOT REQUIRED BUT STANDARD
 const CAKE_RESTOCKED = 'CAKE_RESTOCKED' // SECOND EXAPMLE
@@ -87,13 +92,14 @@ const iceCreamReducer = (state = initialIceCreamState, action) => {     //TODO K
 
 const rootReducer = combineReducers({
     cake: cakeReducer,
-    iceCream : iceCreamReducer
+    iceCream: iceCreamReducer
 })
 
 
-const store = createStore(rootReducer) //REDUCER INITIALSTATE ILE BAGLI
+const store = createStore(rootReducer, applyMiddleware(logger)) //REDUCER INITIALSTATE ILE BAGLI //ApplyMiddlewareLogger Eklendi
 console.log('Initial State', store.getState()) //INITIAL STATE 'I CONSOL'A KAYDEDER.
-const unsubribe = store.subscribe(() => console.log('pdate state', store.getState()))
+const unsubscribe = store.subscribe(() => { })
+// ESKI HALİ -- const subcribe = store.subscribe(() => console.log('pdate state', store.getState()))
 
 // store.dispatch(orderCake())
 // store.dispatch(orderCake())
@@ -107,7 +113,7 @@ actions.restockCake(3)
 actions.orderIceCream()
 actions.orderIceCream()
 actions.restockIceCream(2)
-unsubribe() //AND EXIT
+unsubscribe() //AND EXIT
 
 //TODO LINE 2,3,43 HOLDS APPLICATION STATE
 //TODO LINE 44,45 ALLOWS ACCESS TO STATE VIA getState()

@@ -7,3 +7,5 @@ md index.js -> node index (npm start olarak Kullanılır)
 node nested-state
 
 npm install immer  // reducer içerisindeki karmaşık yapıları basitleştirmek için kullanılır.
+
+npm i redux-logger //Uygulamamızdaki Redux ile tüm bilgileri günlüğe kaydeder
